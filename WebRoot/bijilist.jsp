@@ -9,7 +9,6 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>在线学习系统</title>
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="<%=Const.ROOT %>assets/materialize/css/materialize.min.css" media="screen,projection"/>
     <!-- Bootstrap Styles-->
@@ -42,7 +41,6 @@
                             <li><a href="#">笔记 </a></li>
                         </ol>
                     </div>
-
                     <div class="col-sm-3">
                         <div id="dataTables-example_filter" class="dataTables_filter">
                             <label>查询:<input type="search" name="voidname" value="${voidname }"
@@ -55,7 +53,6 @@
                 </div>
             </form>
         </div>
-
         <!-- 表格 -->
         <div class="col-md-12">
             <!--    Context Classes  -->
@@ -86,12 +83,10 @@
                                            data-target="#deleteModal" onclick="todelete('${item.id}')">
                                             删除</a>
                                     </td>
-
                                 </tr>
                             </c:forEach>
                             </tbody>
                         </table>
-
                         <!--分页-->
                         <form action="<%=Const.ROOT%>void/getAllMybijilist" method="post" id="Page">
                             <div class="col-sm-6">
@@ -111,7 +106,6 @@
                                     ${pageInfo.pageNum }/${pageInfo.pages }
                                 </div>
                             </div>
-
                             <div class="col-sm-6">
                                 <div id="dataTables-example_filter" class="dataTables_filter">
                                     <label>跳转到<input type="number" id="pageNum" name="pageNum"
@@ -126,11 +120,7 @@
             </div>
             <!--  end  Context Classes  -->
         </div>
-
-
         <!-- 模态框（Modal） -->
-
-
         <!--删除 -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
@@ -150,13 +140,11 @@
                                         <label>是否删除？</label>
                                     </div>
                                 </div>
-
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                                     <button type="submit" class="btn btn-danger">确定</button>
                                 </div>
                             </form>
-
                             <!-- 模态框结尾 -->
                             <div class="switch">
                                 <label>
@@ -167,18 +155,13 @@
                 </div>
             </div>
         </div>
-
-
         <!-- /. WRAPPER  -->
         <!-- JS Scripts-->
         <!-- jQuery Js -->
         <script src="<%=Const.ROOT %>assets/js/jquery-1.10.2.js"></script>
-
         <!-- Bootstrap Js -->
         <script src="<%=Const.ROOT %>assets/js/bootstrap.min.js"></script>
-
         <script src="<%=Const.ROOT %>assets/materialize/js/materialize.min.js"></script>
-
         <!-- Metis Menu Js -->
         <script src="<%=Const.ROOT %>assets/js/jquery.metisMenu.js"></script>
         <!-- Custom Js -->
@@ -196,7 +179,6 @@
         location.href = "${pageContext.request.contextPath }/void/lookVoid/" + id;
     }
 
-
     function todelete(id) {
         $("#deletemodal #id").val(id);
         $("#deletemodal").show();
@@ -205,13 +187,10 @@
     function toupdate(id) {
         $.getJSON("${pageContext.request.contextPath }/void/toupdateVoid/" + id, function (data) {
             $("#updatemodal #id").val(id);
-
             $("#updatemodal #voidname").val(data.voidname);
             $("#updatemodal #voidcontent").val(data.voidcontent);
             $("#updatemodal #kindid").val(data.kindid);
-
             $("#updatemodal").show();
-
         });
     }
 

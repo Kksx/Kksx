@@ -8,6 +8,7 @@
 <title>在线学习系统</title>
 <link href="<%=Const.LOGROOT%>css/style.css" rel="stylesheet" type="text/css" media="all" />
 <style type="text/css">
+         #footer{color: white}
 		input[type="button"]{
 			float: right;
 			color: #fff;
@@ -33,7 +34,7 @@
 	</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- -->
 <script>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</script>
 <script src="<%=Const.LOGROOT%>js/jquery.min.js"></script>
@@ -42,26 +43,25 @@
 		$('.message').fadeOut('slow', function(c){
 	  		$('.message').remove();
 		});
-	});	  
+	});
 });
 </script>
 <script>function jump(){window.location.href="<%=Const.ROOT%>/register.jsp";}</script>
 </head>
 <body>
-<!-- contact-form -->	
+<!-- contact-form -->
 <div class="message warning">
 <div class="inset">
 	<div class="login-head">
 		<h1>在线学习系统</h1>
-		 <div class="alert-close">  </div> 			
 	</div>
 		<form action="<%=Const.ROOT%>user/login" method="post"  enctype="multipart/form-data">
 			<li>
-				<input type="text" class="text" name="username" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"><a  class=" icon user"></a>
+				<input type="text" class="text" name="username" placeholder="请输入用户名" value="${username}"><a  class=" icon user"></a>
 			</li>
 				<div class="clear"> </div>
 			<li>
-				<input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> <a  class="icon lock"></a>
+				<input type="password" name="password" placeholder="请输入密码"> <a  class="icon lock"></a>
 			</li>
 			<div class="clear" style="color: #F00">${wrong }</div>
 			<div class="clear" style="color: #00aeff">${success }</div>
@@ -74,14 +74,14 @@
 			</div>
 
 		</form>
-		</div>					
-	</div>
+		</div>
 	</div>
 	<div class="clear"> </div>
-<!--- footer --->
-<div class="footer">
-	<p align="center">@山东交通学院</p>
+	<!--- footer --->
+	<p id="footer" align="center">@山东交通学院</p>
 </div>
+</div>
+
 
 </body>
 </html>

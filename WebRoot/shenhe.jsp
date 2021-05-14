@@ -9,7 +9,6 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>在线学习系统</title>
-
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="<%=Const.ROOT %>assets/materialize/css/materialize.min.css" media="screen,projection"/>
     <!-- Bootstrap Styles-->
@@ -38,7 +37,6 @@
                         </h1>
             </form>
         </div>
-
         <!-- 表格 -->
         <div class="col-md-12">
             <!--    Context Classes  -->
@@ -69,10 +67,8 @@
                             </c:forEach>
                             </tbody>
                         </table>
-
                         <!--分页-->
                         <form action="<%=Const.ROOT%>kind/getshenhe" method="post" id="Page">
-
                             <div class="col-sm-6">
                                 <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
                                     <ul class="pagination">
@@ -81,7 +77,6 @@
                                                 href="javascript:doPage('${pageInfo.prePage}')" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a></li>
-
                                         <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0"
                                             id="dataTables-example_next"><a
                                                 href="javascript:doPage('${pageInfo.nextPage}')" aria-label="Next">
@@ -99,22 +94,15 @@
                                     </label>
                                 </div>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>
             <!--  end  Context Classes  -->
         </div>
-
-
         <!-- 模态框（Modal） -->
-
-
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
-
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -128,7 +116,6 @@
                                   enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="input-field col s6">
-
                                         <input id="kindname" name="kindname" required="" type="text" class="validate">
                                         <label for="icon_prefix">学习计划名称</label>
                                     </div>
@@ -137,8 +124,6 @@
                                     <button type="submit" class="btn btn-primary">保存</button>
                                 </div>
                             </form>
-
-
                             <!-- 模态框结尾 -->
                             <div class="switch">
                                 <label>
@@ -149,12 +134,9 @@
                 </div>
             </div>
         </div>
-
-
         <!--修改 -->
         <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
-
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -168,18 +150,14 @@
                                 <input type="hidden" id="id" name="id">
                                 <div class="row">
                                     <div class="input-field col s6">
-
                                         <input id="kindname" name="kindname" required="" type="text" class="validate">
                                         <label for="icon_prefix">学习计划名称</label>
                                     </div>
                                 </div>
-
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">保存</button>
                                 </div>
                             </form>
-
-
                             <!-- 模态框结尾 -->
                             <div class="switch">
                                 <label>
@@ -190,11 +168,9 @@
                 </div>
             </div>
         </div>
-
         <!--删除 -->
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
-
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -202,7 +178,6 @@
                 </div>
                 <div class="row" id="deletemodal" style="display: none">
                     <div class="col-lg-12">
-
                         <div class="card-content">
                             <form class="col s12" action="<%=Const.ROOT%>kind/doshenhe" method="post"
                                   enctype="multipart/form-data">
@@ -217,8 +192,6 @@
                                     <button type="submit" class="btn btn-danger">确定</button>
                                 </div>
                             </form>
-
-
                             <!-- 模态框结尾 -->
                             <div class="switch">
                                 <label>
@@ -229,18 +202,13 @@
                 </div>
             </div>
         </div>
-
-
         <!-- /. WRAPPER  -->
         <!-- JS Scripts-->
         <!-- jQuery Js -->
         <script src="<%=Const.ROOT %>assets/js/jquery-1.10.2.js"></script>
-
         <!-- Bootstrap Js -->
         <script src="<%=Const.ROOT %>assets/js/bootstrap.min.js"></script>
-
         <script src="<%=Const.ROOT %>assets/materialize/js/materialize.min.js"></script>
-
         <!-- Metis Menu Js -->
         <script src="<%=Const.ROOT %>assets/js/jquery.metisMenu.js"></script>
         <!-- Custom Js -->
@@ -254,7 +222,6 @@
         $("#Page").submit();
     }
 
-
     function toadduser() {
         $("#addmodal").show();
     }
@@ -267,11 +234,8 @@
     function toupdate(id) {
         $.getJSON("${pageContext.request.contextPath }/kind/toupdateKind/" + id, function (data) {
             $("#updatemodal #id").val(id);
-
             $("#updatemodal #kindname").val(data.kindname);
-
             $("#updatemodal").show();
-
         });
     }
 

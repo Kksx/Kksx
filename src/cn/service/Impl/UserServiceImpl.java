@@ -2,6 +2,7 @@ package cn.service.Impl;
 
 import java.util.List;
 
+import cn.util.Md5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,16 +48,19 @@ public class UserServiceImpl implements UserService{
 
 	public int insert(User record) {
 		// TODO Auto-generated method stub
+		record.setPassword(Md5Utils.md5(record.getPassword()));
 		return userMapper.insert(record);
 	}
 
 	public int insertSelective(User record) {
 		// TODO Auto-generated method stub
+		record.setPassword(Md5Utils.md5(record.getPassword()));
 		return userMapper.insertSelective(record);
 	}
 
 	public User login(String username, String password) {
 		// TODO Auto-generated method stub
+		password=Md5Utils.md5(password);
 		return userMapper.login(username, password);
 	}
 
@@ -67,11 +71,13 @@ public class UserServiceImpl implements UserService{
 
 	public int updateByPrimaryKey(User record) {
 		// TODO Auto-generated method stub
+		record.setPassword(Md5Utils.md5(record.getPassword()));
 		return userMapper.updateByPrimaryKey(record);
 	}
 
 	public int updateByPrimaryKeySelective(User record) {
 		// TODO Auto-generated method stub
+		record.setPassword(Md5Utils.md5(record.getPassword()));
 		return userMapper.updateByPrimaryKeySelective(record);
 	}
 

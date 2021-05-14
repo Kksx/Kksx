@@ -2,7 +2,6 @@
          pageEncoding="UTF-8" %>
 <%@page import="cn.util.Const" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <nav class="navbar navbar-default top-navbar" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -12,10 +11,8 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand waves-effect waves-dark" href=""> <strong>在线学习系统</strong></a>
-
         <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
     </div>
-
     <ul class="nav navbar-top-links navbar-right">
         <c:if test="${sessionScope.userSession.headpic!=null }">
             <li><img style="width: 30px;margin-top: -45px"
@@ -27,8 +24,6 @@
     </ul>
 </nav>
 <!-- 用户模块 -->
-
-
 <ul id="dropdown1" class="dropdown-content">
     <c:if test="${sessionScope.userSession!=null }">
         </li>
@@ -45,7 +40,6 @@
 </ul>
 <li><a href="#"><i class="fa fa-user fa-fw"></i> My Profile</a>
 </li>
-
 <ul id="dropdown2" class="dropdown-content w250">
     <li>
         <a href="#">
@@ -217,7 +211,6 @@
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
             <c:if test="${sessionScope.role==1}">
-
                 <li style="height: 42px">
                     <a href="<%=Const.ROOT%>user/getUserlist" class="waves-effect waves-dark"><i
                             class="fa fa-desktop"></i> 用户管理</a>
@@ -242,7 +235,6 @@
                     <a href="<%=Const.ROOT%>news/getNewslist" class="waves-effect waves-dark"><i
                             class="fa fa-table"></i> 话题管理</a>
                 </li>
-
                 <li style="height: 42px">
                     <a data-toggle="modal" data-target="#gonggaoModal" onclick="toaddgonggao()"
                        class="waves-effect waves-dark"><i class="fa fa-table"></i> 发布新公告</a>
@@ -259,7 +251,6 @@
                             class="fa fa-edit"></i> 成绩查看 </a>
                 </li>
             </c:if>
-
             <c:if test="${sessionScope.role==2}">
                 <li style="height: 42px">
                     <a href="<%=Const.ROOT%>kind/getKindlist" class="waves-effect waves-dark"><i
@@ -273,7 +264,6 @@
                     <a href="<%=Const.ROOT%>void/getVoidlist" class="waves-effect waves-dark"><i
                             class="fa fa-qrcode"></i> 视频管理</a>
                 </li>
-
                 <li style="height: 42px">
                     <a href="<%=Const.ROOT%>news/getNewslist" class="waves-effect waves-dark"><i
                             class="fa fa-table"></i> 话题管理</a>
@@ -290,12 +280,10 @@
                             class="fa fa-edit"></i> 成绩查看 </a>
                 </li>
             </c:if>
-
             <li style="height: 42px">
                 <a href="<%=Const.ROOT%>void/getVoidlist?role=3" class="waves-effect waves-dark"><i
                         class="fa fa-qrcode"></i> 学习视频</a>
             </li>
-
             <li style="height: 42px">
                 <a href="<%=Const.ROOT%>news/getNewslist?role=3" class="waves-effect waves-dark"><i
                         class="fa fa-table"></i> 最新话题</a>
@@ -319,21 +307,14 @@
                         <li style="height: 42px">
                             <a href="<%=Const.ROOT%>timu/getMyScore">我的成绩</a>
                         </li>
-
-
                     </ul>
                 </li>
             </c:if>
         </ul>
-
     </div>
-
 </nav>
 <!-- 模态框（Modal） -->
-
-
 <div class="modal fade" id="gonggaoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -342,12 +323,10 @@
         <!-- 新增 -->
         <div class="row" id="addgonggaomodal" style="display: none">
             <div class="col-lg-12">
-
                 <div class="card-content">
                     <form class="col s12" action="<%=Const.ROOT%>news/addNews" method="post"
                           enctype="multipart/form-data">
                         <input type="hidden" id="top" name="top" value="2">
-
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="title" name="title" required="" type="text" class="validate">
@@ -365,8 +344,6 @@
                             <button type="submit" class="btn btn-primary">保存</button>
                         </div>
                     </form>
-
-
                     <!-- 模态框结尾 -->
                     <div class="switch">
                         <label>
@@ -375,13 +352,10 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal -->
         </div>
-
-
     </div>
 </div>
 <script type="text/javascript">
     function toaddgonggao() {
         $("#addgonggaomodal").show();
     }
-
 </script>
