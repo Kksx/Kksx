@@ -70,6 +70,14 @@ public class UserController {
 	@RequestMapping("login")
 	public String login(String username, String password,
 			HttpSession session, Model model) {
+		if(username==null){
+			model.addAttribute("wrong", "用户名不能为空");
+			return "login/login";
+		}
+		if(password==null){
+			model.addAttribute("wrong", "密码不能为空");
+			return "login/login";
+		}
 		System.out.println("login ============ ");
 		User user = userService.login(username, password);
 		if (user!=null) {//登陆成功
