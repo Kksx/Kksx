@@ -63,7 +63,6 @@
                                 <th>#</th>
                                 <th>用户名</th>
                                 <th>真实姓名</th>
-                                <th>密码</th>
                                 <th>电话</th>
                                 <th>Email</th>
                                 <th>住址</th>
@@ -77,7 +76,6 @@
                                     <td>${count.count }</td>
                                     <td>${item.username }</td>
                                     <td>${item.realname }</td>
-                                    <td>${item.password }</td>
                                     <td>${item.phone }</td>
                                     <td>${item.email }</td>
                                     <td>${item.address }</td>
